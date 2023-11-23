@@ -1,9 +1,9 @@
-import { Galaxy, Star, Planet, Universe } from "../../../models/galaxy.models";
+import { Galaxy, Star, Planet, Universe } from "../models/universe.models";
 import {
   ValidationError,
   ValidationErrorSeverity,
   ValidationErrors,
-} from "../../../models/validation.models";
+} from "../../../models/form.models";
 import { generateWarningValidationError, getHighestSeverity } from "../../../utilities/validation.utilities";
 import { exists } from "../../../utilities/value.utilities";
 import { LOW_REQUIRED_VALIDATION_ERROR } from "../../../values/validation.values";

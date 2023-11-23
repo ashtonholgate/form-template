@@ -1,4 +1,4 @@
-import { Galaxy, Planet, Star } from "../../../models/galaxy.models";
+import { Galaxy, Planet, Star } from "./universe.models";
 
 export type AddGalaxyPayload = {
   galaxy: Galaxy;

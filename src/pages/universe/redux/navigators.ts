@@ -1,4 +1,4 @@
-import { Galaxy, Planet, Star, Universe } from "../../../models/galaxy.models";
+import { Galaxy, Planet, Star, Universe } from "../models/universe.models";
 import { exists } from "../../../utilities/value.utilities";
 
 export const getGalaxy = (universe: Universe, galaxyId: string): Galaxy => {

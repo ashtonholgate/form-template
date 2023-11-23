@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { Galaxy, Planet, Star, Universe } from "../../../models/galaxy.models";
+import { Galaxy, Planet, Star, Universe } from "../models/universe.models";
 import {
   AddGalaxyPayload,
   AddPlanetPayload,
@@ -11,7 +11,7 @@ import {
   UpdateGalaxyPayload,
   UpdatePlanetPayload,
   UpdateStarPayload,
-} from "./actions";
+} from "../models/slice.models";
 import { getGalaxy, getPlanet, getStar } from "./navigators";
 
 export type UniverseState = Universe;

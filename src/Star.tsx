@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Star } from "./models/galaxy.models";
+import { Star } from "./pages/universe/models/universe.models";
 import { memo } from "react";
 import { Input } from "./Input";
 
