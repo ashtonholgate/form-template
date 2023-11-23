@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { Galaxy, Planet, Star, Universe } from "../models/universe.models";
+import { EditableKeysOfGalaxy, EditableKeysOfStar, EditableKeysOfPlanet, Universe } from "../models/universe.models";
 import {
   AddGalaxyPayload,
   AddPlanetPayload,
@@ -39,7 +39,7 @@ export const universeSlice = createSlice({
       );
       state.galaxies.splice(galaxyIndex, 1);
     },
-    changeGalaxy: <K extends keyof Galaxy>(
+    changeGalaxy: <K extends keyof EditableKeysOfGalaxy>(
       state: UniverseState,
       action: PayloadAction<UpdateGalaxyPayload<K>>
     ) => {
@@ -61,7 +61,7 @@ export const universeSlice = createSlice({
       const starIndex = galaxy.stars.findIndex((star) => star.id === starId);
       galaxy.stars.splice(starIndex, 1);
     },
-    changeStar: <K extends keyof Star>(
+    changeStar: <K extends keyof EditableKeysOfStar>(
       state: UniverseState,
       action: PayloadAction<UpdateStarPayload<K>>
     ) => {
@@ -85,7 +85,7 @@ export const universeSlice = createSlice({
       );
       star.planets.splice(planetIndex, 1);
     },
-    changePlanet: <K extends keyof Planet>(
+    changePlanet: <K extends keyof EditableKeysOfPlanet>(
       state: UniverseState,
       action: PayloadAction<UpdatePlanetPayload<K>>
     ) => {

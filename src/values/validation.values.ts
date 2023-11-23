@@ -2,7 +2,7 @@ import {
   generateCriticalValidationError,
   generateLowValidationError,
   generateWarningValidationError,
-} from "../utilities/validation.utilities";
+} from "../utilities/form.utilities";
 
 export const WARNING_VALIDATION_ERROR = generateWarningValidationError();
 export const LOW_VALIDATION_ERROR = generateLowValidationError();

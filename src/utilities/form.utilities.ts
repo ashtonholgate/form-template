@@ -1,4 +1,4 @@
-import { CriticalValidationError, ValidationErrorSeverity, LowValidationError, WarningValidationError, ValidationError } from "../models/validation.models";
+import { CriticalValidationError, ValidationErrorSeverity, LowValidationError, WarningValidationError, ValidationError } from "../models/form.models";
 import { exists } from "./value.utilities";
 
 export const generateWarningValidationError = (message: string = "Warning"): WarningValidationError => ({

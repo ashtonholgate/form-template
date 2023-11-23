@@ -1,22 +1,29 @@
-import { FormString } from "../../../models/form.models";
-
 export type Universe = {
   galaxies: Galaxy[];
 };
 
-export type Galaxy = {
+export type EditableKeysOfGalaxy = {
+  name: string | null;
+}
+
+export type Galaxy = EditableKeysOfGalaxy & {
   id: string;
-  name: FormString;
   stars: Star[];
 };
 
-export type Star = {
+export type EditableKeysOfStar = {
+  name: string | null;
+}
+
+export type Star = EditableKeysOfStar & {
   id: string;
-  name: FormString;
   planets: Planet[];
 };
 
-export type Planet = {
+export type EditableKeysOfPlanet = {
+  name: string | null;
+}
+
+export type Planet = EditableKeysOfPlanet & {
   id: string;
-  name: FormString;
 };

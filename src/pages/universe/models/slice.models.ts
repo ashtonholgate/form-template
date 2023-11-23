@@ -1,4 +1,4 @@
-import { Galaxy, Planet, Star } from "./universe.models";
+import { EditableKeysOfGalaxy, EditableKeysOfPlanet, EditableKeysOfStar, Galaxy, Planet, Star } from "./universe.models";
 
 export type AddGalaxyPayload = {
   galaxy: Galaxy;
@@ -8,10 +8,10 @@ export type RemoveGalaxyPayload = {
   galaxyId: string;
 };
 
-export type UpdateGalaxyPayload<K extends keyof Galaxy> =
+export type UpdateGalaxyPayload<K extends keyof EditableKeysOfGalaxy> =
   RemoveGalaxyPayload & {
     key: K;
-    value: Galaxy[K];
+    value: EditableKeysOfGalaxy[K];
   };
 
 export type AddStarPayload = {
@@ -24,9 +24,9 @@ export type RemoveStarPayload = {
   starId: string;
 };
 
-export type UpdateStarPayload<K extends keyof Star> = RemoveStarPayload & {
+export type UpdateStarPayload<K extends keyof EditableKeysOfStar> = RemoveStarPayload & {
   key: K;
-  value: Star[K];
+  value: EditableKeysOfStar[K];
 };
 
 export type AddPlanetPayload = {
@@ -41,7 +41,7 @@ export type RemovePlanetPayload = {
   planetId: string;
 };
 
-export type UpdatePlanetPayload<K extends keyof Planet> = RemovePlanetPayload & {
+export type UpdatePlanetPayload<K extends keyof EditableKeysOfPlanet> = RemovePlanetPayload & {
   key: K;
-  value: Planet[K];
+  value: EditableKeysOfPlanet[K];
 };

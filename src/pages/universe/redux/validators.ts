@@ -1,25 +1,25 @@
-import { Galaxy, Star, Planet, Universe } from "../models/universe.models";
+import { Galaxy, Star, Planet, Universe, EditableKeysOfGalaxy, EditableKeysOfStar, EditableKeysOfPlanet } from "../models/universe.models";
 import {
   ValidationError,
   ValidationErrorSeverity,
   ValidationErrors,
 } from "../../../models/form.models";
-import { generateWarningValidationError, getHighestSeverity } from "../../../utilities/validation.utilities";
+import { generateWarningValidationError, getHighestSeverity } from "../../../utilities/form.utilities";
 import { exists } from "../../../utilities/value.utilities";
 import { LOW_REQUIRED_VALIDATION_ERROR } from "../../../values/validation.values";
 
-export const validateGalaxy = (galaxy: Galaxy): ValidationErrors<Galaxy> => ({
+export const validateGalaxy = (galaxy: Galaxy): ValidationErrors<EditableKeysOfGalaxy> => ({
   name: exists(galaxy.name) ? null : LOW_REQUIRED_VALIDATION_ERROR,
 });
 
-export const validateStar = (star: Star): ValidationErrors<Star> => {
+export const validateStar = (star: Star): ValidationErrors<EditableKeysOfStar> => {
   let name: ValidationError = null;
   if (!exists(star.name)) name = LOW_REQUIRED_VALIDATION_ERROR;
   else if (star.name.length < 10) name = generateWarningValidationError(`Must be 10 characters. Is only ${star.name.length} characters`);
   return { name };
 };
 
-export const validatePlanet = (planet: Planet): ValidationErrors<Planet> => ({
+export const validatePlanet = (planet: Planet): ValidationErrors<EditableKeysOfPlanet> => ({
   name: exists(planet.name) ? null : LOW_REQUIRED_VALIDATION_ERROR,
 });
 
